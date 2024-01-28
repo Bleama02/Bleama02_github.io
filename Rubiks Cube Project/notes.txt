@@ -1,0 +1,74 @@
+// Global variables for the current angle of rotation and the
+// x-coordinate, y-coordinate, and z-coordinate of the vector
+// around which the object will be rotated.
+float angle = 0.0f;
+float x = 0.0f;
+float y = 0.0f;
+float z = 1.0f;
+
+// Callback function that will be called whenever a special key
+// (such as the arrow keys) is pressed.
+void specialKeyPressed(int key, int x, int y)
+{
+  switch (key)
+  {
+    // Rotate the object around the x-axis in the positive direction
+    // (i.e. toward the viewer) when the up arrow key is pressed.
+    case GLUT_KEY_UP:
+      angle += 5.0f;
+      x = 1.0f;
+      y = 0.0f;
+      z = 0.0f;
+      break;
+
+    // Rotate the object around the x-axis in the negative direction
+    // (i.e. away from the viewer) when the down arrow key is pressed.
+    case GLUT_KEY_DOWN:
+      angle -= 5.0f;
+      x = 1.0f;
+      y = 0.0f;
+      z = 0.0f;
+      break;
+
+    // Rotate the object around the y-axis in the positive direction
+    // (i.e. to the right) when the right arrow key is pressed.
+    case GLUT_KEY_RIGHT:
+      angle += 5.0f;
+      x = 0.0f;
+      y = 1.0f;
+      z = 0.0f;
+      break;
+
+    // Rotate the object around the y-axis in the negative direction
+    // (i.e. to the left) when the left arrow key is pressed.
+    case GLUT_KEY_LEFT:
+      angle -= 5.0f;
+      x = 0.0f;
+      y = 1.0f;
+      z = 0.0f;
+      break;
+  }
+
+  // Request that the display be updated. This will cause the
+  // display function to be called again, which will redraw the
+  // object with the updated rotation.
+  glutPostRedisplay();
+}
+
+// Display function that will be called to draw the object.
+void display()
+{
+  // Clear the screen and set the current matrix mode to modelview.
+  glClear(GL_COLOR_BUFFER_BIT);
+  glMatrixMode(GL_MODELVIEW);
+
+  // Create a new matrix stack by pushing the current matrix onto
+  // the stack. This will save the current transformation state.
+  glPushMatrix();
+
+  // Rotate the object using the global angle, x, y, and z values.
+  glRotatef(angle, x, y, z);
+
+  // Draw the object that you want to rotate here.
+
+  //
