@@ -1,0 +1,283 @@
+/*-------------------------------*/
+/*  THIS IS FOR HEADER FORMAT    */
+/*-------------------------------*/
+
+header {
+    background-color: #b0c9e3;
+    padding: 20px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* logo size */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.profile img {
+    height: 40px; /* Profile picture size */
+    border-radius: 50%; /* Makes it a circle */
+    align-items: end;
+}
+
+/*-------------------------------*/
+/*    THIS IS FOR BODY FORMAT    */
+/*-------------------------------*/
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack form and footer vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.button-toggle {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+}
+
+.button-toggle button {
+    padding: 12px 25px; /* Adjust padding for better size */
+    margin: 0 20px; /* Adjust margin for spacing */
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 1em; /* Add font-size for better readability */
+    border-radius: 5px; /* Add slight rounded corners */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.button-toggle button:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.button-toggle button.active {
+    background-color: #b0c9e3;
+    color: white;
+    border: none;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto; /* Center the form horizontally */
+    border: 20px solid #b0c9e3; 
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0077b3;
+}
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* Make the form take up more width on smaller screens */
+        padding: 15px; 
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+        width: calc(100% - 12px); /* Maintain full width */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+
+/*-------------------------------*/
+/*  THIS IS FOR FOOTER FORMAT    */
+/*-------------------------------*/
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Spaces out words evenly */
+}
+
+.footer-section {
+    margin: 10px 0; /* Adjust margins */
+    text-align: left;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Should respond to smaller screens like phones or tablets */
+@media (max-width: 768px) { /* Adjust breakpoint */
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center items in each section */
+        margin-left: 25px;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+/*--------------------------------------------------*/
+/*  THIS IS FOR ADDING ORGANIZERS AND VOLUNTEERS    */
+/*--------------------------------------------------*/
+
+#organizersList, #volunteersList {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    min-height: 40px; /* Adjust as needed */
+    display: flex; /* Display organizers horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+#organizersList div, #volunteersList div {
+    background-color: #f0f0f0; /* This is causing the issue */
+    padding: 5px;
+    margin: 3px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+#addOrganizerBtn, #addVolunteerBtn {
+    padding: 5px 10px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#addOrganizerBtn:hover, #addVolunteerBtn:hover {
+    background-color: #3e8e41; 
+}
+
+#newOrganizer, #newVolunteer {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+#eventFormFields label {
+    display: block; /* Make labels appear on their own line */
+    margin-top: 10px;
+}
+
+#eventFormFields input[type="text"],
+#eventFormFields input[type="date"],
+#eventFormFields input[type="time"],
+#eventFormFields input[type="number"],
+#eventFormFields textarea {
+    width: 100%; /* Make input fields take full width */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+#eventFormFields input[type="submit"] {
+    background-color: #008CBA; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#eventFormFields input[type="submit"]:hover {
+    background-color: #0077b3; /* Darker blue */
+}
+
+#organizersList {
+    display: flex; /* Display organizers horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+.organizer-box {
+    color: #000000; /* Black text */
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    display: inline-block; /* Display as inline-block elements */
+}

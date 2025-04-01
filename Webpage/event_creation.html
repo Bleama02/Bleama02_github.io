@@ -1,0 +1,144 @@
+<html>
+<head>
+    <title>Create Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="style_event.css"> 
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="your-logo.png" alt="Your Logo">   <!-- Our Logo Must go Here -->
+            </div>
+            <nav>
+                <a href="home.html"><u>Home</u></a>
+                <a href="#"><u>Search</u></a>
+                <a href="#"><u>Explore</u></a>
+                <a href="#"><u>Plan</u></a>
+                <a href="#"><u>Help</u></a>
+            </nav>
+            <div class="profile">
+                <img src="profile-pic.jpg" alt="Profile Picture"> <!-- User Profile Picture -->
+            </div>
+        </div>
+    </header>
+    <h1 id="formTitle">Create New Event</h1>
+    <div class="container">  <!-- This is the form itself -->
+        <div class="button-toggle">
+            <button id="volunteerBtn">Volunteer</button>
+            <button id="eventBtn" class="active">Event</button>
+        </div>
+    
+        <form id="volunteerForm" action="EventVolunteerServlet" method="post">
+            <div id="volunteerFormFields">
+                <label for="opportunityName">Opportunity Name:</label>
+                <input type="text" id="opportunityName" name="opportunityName"><br><br>
+
+                <label for="newOrganizerVolunteer">Organizer(s):</label><br>
+                <input type="text" id="newOrganizerVolunteer" placeholder="Enter Organizer Name">
+                <button type="button" id="addOrganizerBtnVolunteer">+</button>
+                <div id="organizersListVolunteer"></div><br><br>
+    
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+    
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time"><br><br>
+    
+                <label for="addressLine1">Address Line 1:</label>
+                <input type="text" id="addressLine1" name="addressLine1"><br><br>
+    
+                <label for="addressLine2">Address Line 2:</label>
+                <input type="text" id="addressLine2" name="addressLine2"><br><br>
+    
+                <label for="cityStateZip">City, State, Zipcode:</label>
+                <input type="text" id="cityStateZip" name="cityStateZip"><br><br>
+    
+                <label for="volunteersNeeded">Number of Volunteers Needed:</label>
+                <input type="number" id="volunteersNeeded" name="volunteersNeeded" min="1"><br><br>
+
+                <label for="newVolunteer">Already have volunteers?</label><br>
+                <input type="text" id="newVolunteer" placeholder="Enter Volunteer Name">
+                <button type="button" id="addVolunteerBtn">+</button>
+                <div id="volunteersList"></div><br><br>
+    
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+    
+                <input type="submit" value="Create Volunteer Opportunity">
+            </div>
+        </form>
+    
+        <form id="eventForm" action="EventVolunteerServlet" method="post" style="display: none;">
+            <div id="eventFormFields">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName"><br><br>
+
+                <label for="newOrganizerEvent">Organizer(s):</label><br>
+                <input type="text" id="newOrganizerEvent" placeholder="Enter Organizer Name">
+                <button type="button" id="addOrganizerBtnEvent">+</button>
+                <div id="organizersListEvent"></div><br><br>
+    
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate"><br><br>
+    
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime" name="eventTime"><br><br>
+    
+                <label for="eventAddressLine1">Address Line 1:</label>
+                <input type="text" id="eventAddressLine1" name="eventAddressLine1"><br><br>
+    
+                <label for="eventAddressLine2">Address Line 2:</label>
+                <input type="text" id="eventAddressLine2" name="eventAddressLine2"><br><br>
+    
+                <label for="eventCityStateZip">City, State, Zipcode:</label>
+                <input type="text" id="eventCityStateZip" name="eventCityStateZip"><br><br>
+    
+                <label for="eventDescription">Description:</label><br>
+                <textarea id="eventDescription" name="eventDescription" rows="4" cols="50"></textarea><br><br>
+    
+                <input type="submit" value="Create Event">
+            </div>
+        </form>
+    </div>
+    
+
+        <div id="message"></div> 
+    </div>
+    <footer>                                    <!--We dont have to have all these options if we dont need it-->
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="home.html">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">Plan</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">Search</a>
+                <a href="#">Food Banks</a>
+                <a href="#">Community Events</a>
+                <a href="#">Medical Centers & Hospitals</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">Map</a>
+                <a href="#">Community Centers</a>
+                <a href="#">Volunteer Opportunities</a>
+                <a href="#">Clothing Stores</a>
+                <a href="#">Shelters</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">Help</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Accessibility</a>
+                <a href="#">About</a>
+            </div>
+            <div class="footer-section">
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="event_script.js"></script>
+     
+</body>
+</html>
